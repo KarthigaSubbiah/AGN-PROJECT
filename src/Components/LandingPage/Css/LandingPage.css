@@ -1,0 +1,16 @@
+.alpha-panel .line {
+  width: 600px;
+  height: 2px;
+  background-color: #a1005f;
+  position: absolute;
+  top: -10px;
+}
+
+.alpha-panel .whey-protein-text {
+  position: absolute;
+  top: -70px;
+  color: #ff6347;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: capitalize
+}

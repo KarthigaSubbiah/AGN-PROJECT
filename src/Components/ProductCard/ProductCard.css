@@ -1,0 +1,5 @@
+.MuiAspectRatio-content{
+    display: flex !important;
+    justify-content: center !important;
+    height: 202px !important;
+}
