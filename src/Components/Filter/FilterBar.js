@@ -23,7 +23,7 @@ const FilterBar = () => {
         backgroundColor: "#fafafa",
       }}
     >
-      {/* Category Filter */}
+      {/* Category Filter List */}
       <FormControl size="sm">
         <FormLabel>Category</FormLabel>
         <Box>
