@@ -19,6 +19,7 @@ const NavBar = () => {
         position:"sticky",
         top:"0",
         zIndex:"100000",
+        marginBottom:"10px"
         // background: "linear-gradient(to right, #061b42, white)"
       }}
     >

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Typography,
-  Button,
   IconButton,
   Accordion,
   AccordionSummary,
@@ -10,7 +9,7 @@ import {
 import Rating from "@mui/material/Rating";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { Button, Modal, Space } from 'antd';
 import "./ProductDetailCard.css";
 import powderImage from "../Svgs/LandingPage/powderImage.png";
 import powderImageLarge from "../Svgs/LandingPage/powderImage-big.png";
@@ -25,9 +24,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import ReactImageMagnify from "react-image-magnify";
+import ReviewForm from "../ReviewForm/ReviewForm";
 
 export default function ProductDetailCard() {
   const [quantity, setQuantity] = useState(1);
+  const [open,setOpen]=useState(false);
   var settings = {
     dots: true,
     infinite: true,
@@ -65,8 +66,13 @@ export default function ProductDetailCard() {
     );
   }
 
+    const showModal = () => {
+    setOpen(!open);
+  };
+
   return (
-    <Box className="product-container">
+    <Box>
+   <Box className="product-container">
       <Box className="product-left">
         {/* <img
           src={powderImage} // Replace with your image path
@@ -158,7 +164,9 @@ export default function ProductDetailCard() {
           </Stack>
         </Box>
 
-        <Button variant="solid" className="add-to-cart-btn">
+        <Button variant="solid" className="add-to-cart-btn" onClick={()=>{
+          showModal()
+        }}>
           REVIEW PRODUCT
         </Button>
 
@@ -194,6 +202,26 @@ export default function ProductDetailCard() {
           </AccordionDetails>
         </Accordion>
       </Box>
+  
     </Box>
+
+    
+      <Modal
+        open={open}
+        // title="Title"
+        // onOk={handleOk}
+        // onCancel={handleCancel}
+        footer={
+          <></>
+        }
+        title={
+          <div>Feedback Form</div>
+        }
+      >
+         <ReviewForm/>
+      </Modal>
+        
+    </Box>
+ 
   );
 }
