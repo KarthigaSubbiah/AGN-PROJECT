@@ -1,6 +1,6 @@
 import kasar from "../Utility/FlavourImages/kaser.png";
 import redVelvet from "../Utility/FlavourImages/red-velvet.png";
-import vennila from "../Utility/FlavourImages/vennila.jpg";
+import vennila from "../Utility/FlavourImages/vennila.png";
 import alphanza from "../Utility/FlavourImages/alphonza.png";
 import cookies from "../Utility/FlavourImages/cookies.png";
 import rose from "../Utility/FlavourImages/tandai.png";

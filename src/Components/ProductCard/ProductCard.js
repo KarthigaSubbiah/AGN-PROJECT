@@ -7,31 +7,32 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import Chip from "@mui/joy/Chip";
 import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
-import powderImage from "../Svgs/LandingPage/powderImage.png";
+import powderImage from "../Svgs/LandingPage/powderImage1.png";
 import "./ProductCard.css";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { useNavigate } from "react-router-dom";
+import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 export default function ProductCard() {
   const navigate=useNavigate();
   return (
-    <Card sx={{ width: 250, maxWidth: "100%", boxShadow: "lg" }} onClick={()=>{
+    <Card sx={{ width: isMobile?150:250, maxWidth: "100%", boxShadow: "lg" }} onClick={()=>{
        navigate("/product-details")
     }}>
       <CardOverflow style={{ textAlign: "center" }}>
-        <AspectRatio sx={{ minWidth: 200, textAlign: "center" }}>
+        <AspectRatio sx={{ minWidth: isMobile?100:200, textAlign: "center" }}>
           <img
             src={powderImage}
             // src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
             // srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
             loading="lazy"
             alt=""
-            style={{ width: "133px", height: "205px" }}
+            style={{ width: isMobile?"80px":"133px", height: isMobile?"150px":"205px" }}
           />
         </AspectRatio>
       </CardOverflow>
       <CardContent>
-        <Typography level="body-xs">Bluetooth Headset</Typography>
+        <Typography level="body-xs">Whey Protein</Typography>
         <Link
           // href="#product-card"
           color="neutral"
@@ -40,7 +41,7 @@ export default function ProductCard() {
           //   endDecorator={<ArrowOutwardIcon />}
           sx={{ fontWeight: "md" }}
         >
-          Super Rockez A400
+        Vennila Flavour, 77 / Serving
         </Link>
 
         <Typography
@@ -52,10 +53,10 @@ export default function ProductCard() {
             </Chip>
           }
         >
-          2,900 THB
+      11.4 EAA
         </Typography>
         <Typography level="body-sm">
-          (Only <b>7</b> left in stock!)
+         NET WEIGHT: 2.7 KG [ 6 LBS ]
         </Typography>
       </CardContent>
       <CardOverflow>

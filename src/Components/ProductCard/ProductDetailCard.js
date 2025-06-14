@@ -97,7 +97,7 @@ export default function ProductDetailCard() {
             },
           }}
         />
-        <Box className="thumbnail-row">
+        {/* <Box className="thumbnail-row">
           <Slider {...settings}>
             <div>
               <img src={powderImage} alt="thumb1" />
@@ -112,7 +112,7 @@ export default function ProductDetailCard() {
               <img src={powderImage} alt="thumb2" />
             </div>
           </Slider>
-        </Box>
+        </Box> */}
       </Box>
 
       <Box className="product-right" orientation={"vertical"}>

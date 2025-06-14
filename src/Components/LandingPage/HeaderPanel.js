@@ -1,10 +1,5 @@
 import React from 'react';
-import powderImage from "../Svgs/LandingPage/powderImage.png";
-// import gymBackground from "../Svgs/LandingPage/gym-background.jpg";
-import gymBackground from "../Svgs/LandingPage/background1.avif";
-import powder from "../Svgs/LandingPage/powder.png";
-import premium from "../Svgs/LandingPage/premiumImage.png";
-import thunder from "../Svgs/LandingPage/thunder.png";
+import powderImage from "../Svgs/LandingPage/powderImage1.png";
 import { Carousel } from "antd";
 import flavourList from "../../Utility/FlavouList";
 
@@ -48,7 +43,7 @@ const HeaderPanel = ({carouselContent,flavourPosition,flavorSize,brushText}) => 
 
                 <div style={{ position: "relative" }}></div>
 
-                <div
+                {/* <div
                   style={{
                     position: "absolute",
                     left: "10%",
@@ -59,7 +54,7 @@ const HeaderPanel = ({carouselContent,flavourPosition,flavorSize,brushText}) => 
                   <img
                     src={powderImage}
                     style={{
-                      width: "212px",
+                      width: "300",
                       height: "256px",
                     }}
                   ></img>
@@ -69,23 +64,23 @@ const HeaderPanel = ({carouselContent,flavourPosition,flavorSize,brushText}) => 
                       height: "2px",
                     }}
                   ></div>
-                </div>
+                </div> */}
 
                 <div
                   style={{
                     position: "absolute",
-                    left: "3%",
-                    top: "32%",
+                    left: "-10%",
+                    top: "0%",
                     zIndex: 0,
                   }}
                 >
                   <img
                     src={powderImage}
-                    style={{ width: "181px", height: "199px" }}
+                    // style={{ width: "181px", height: "199px" }}
                   ></img>
                 </div>
 
-                <div
+                {/* <div
                   style={{
                     position: "absolute",
                     left: "20%",
@@ -97,7 +92,7 @@ const HeaderPanel = ({carouselContent,flavourPosition,flavorSize,brushText}) => 
                     src={powderImage}
                     style={{ width: "181px", height: "199px" }}
                   ></img>
-                </div>
+                </div> */}
 
                 {/* Powder */}
 
@@ -135,7 +130,7 @@ const HeaderPanel = ({carouselContent,flavourPosition,flavorSize,brushText}) => 
                     </div>
                     <div className="banel-button">
                       <button class="button-33" role="button">
-                        Button 33
+                      Know More
                       </button>
                     </div>
                   </div>

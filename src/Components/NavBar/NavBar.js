@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "./Svg/logo.png";
+import MenuIcon from "@mui/icons-material/Menu";
+import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 const NavBar = () => {
   let navColor = {
@@ -16,21 +18,36 @@ const NavBar = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        position:"sticky",
-        top:"0",
-        zIndex:"100000",
-        marginBottom:"10px"
+        position: "sticky",
+        top: "0",
+        zIndex: "100000",
+        marginBottom: "10px",
+        width: "100%",
+        paddingRight:"5px"
         // background: "linear-gradient(to right, #061b42, white)"
       }}
     >
       <div>
-        <img src={logo} style={{ width: "230px", height: "60px" }} />
+        <img
+          src={logo}
+          style={{
+            width: "230px",
+            height: "60px",
+            marginLeft: isMobile ? "-35px" : "0px",
+          }}
+        />
       </div>
-      <div style={{ display: "flex", gap: "20px",paddingRight:"20px" }}>
-        <div style={{ ...navColor }}>Home</div>
-        <div style={{ ...navColor }}>About Us</div>
-        <div style={{ ...navColor }}>Login</div>
-      </div>
+      {isMobile ? (
+        <div>
+          <MenuIcon sx={{ color: "white" }} />
+        </div>
+      ) : (
+        <div style={{ display: "flex", gap: "20px", paddingRight: "20px" }}>
+          <div style={{ ...navColor }}>Home</div>
+          <div style={{ ...navColor }}>About Us</div>
+          <div style={{ ...navColor }}>Login</div>
+        </div>
+      )}
     </div>
   );
 };
