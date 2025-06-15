@@ -115,7 +115,7 @@ const ProductList = () => {
         sx={{ padding: 2, height: isMobile ? "auto" : "auto", padding: "0" }}
         alignItems="flex-start"
       >
-        {/* Left Column - Best Sellers */}
+   
         {!isMobile && (
           <Grid xs={12} md={3}>
             <Item sx={{ paddingTop: "0", paddingLeft: "16px" }}>
@@ -190,16 +190,7 @@ const ProductList = () => {
           </Grid>
         )}
 
-        {/* Vertical Divider */}
-        {/* <Box
-          sx={{
-            width: "1px",
-            backgroundColor: "#ccc",
-            height: "100%",
-            margin: "0 8px",
-            display: { xs: "none", md: "block" },
-          }}
-        /> */}
+      
 
         {/* Right Column - All Products */}
         <Grid xs={12} md={8}>
@@ -245,7 +236,6 @@ const ProductList = () => {
                       }
                     }}
                   >
-                    {console.log(currentIndex, allProducts, "checkingProd")}
                     {currentIndex > allProducts?.length
                       ? "Show Less"
                       : "Load More"}
@@ -261,9 +251,25 @@ const ProductList = () => {
                   gap: "8px",
                 }}
               >
-                {allProducts.map((product, index) => (
+                {visibleProducts.map((product, index) => (
                   <MobileProductCard product={product} />
                 ))}
+                  <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "20px",
+                  }}
+                >
+                  <button
+                    class="button-86"
+                    role="button"
+                  >
+                    View All
+                  </button>
+                </div>
               </div>
             )}
           </Item>

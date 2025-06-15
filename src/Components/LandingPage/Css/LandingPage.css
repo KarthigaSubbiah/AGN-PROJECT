@@ -8,20 +8,21 @@
 }
 
 .banel-button {
-  position: absolute;
-  top: 150px;
+  /* position: absolute;
+  top: 150px; */
   width: 300px;
 }
 
 .banel-product-name {
-  position: absolute;
+  /* position: absolute;
   top: -70px;
-  width: 300px;
+  width: 300px; */
+  color: white;
 }
 
 .alpha-panel .whey-protein-text {
-  position: absolute;
-  top: -50px;
+  /* position: absolute; */
+  /* top: -50px; */
   color: #ff6347;
   font-size: 40px;
   font-weight: bold;
@@ -60,10 +61,10 @@
 
 @media (max-width: 768px) {
   .banel-button {
-    top: 36px;
+    /* top: 36px;
     width: auto;
     right: -176px;
-    width: 100px;
+    width: 100px; */
   }
 
   .button-33 {

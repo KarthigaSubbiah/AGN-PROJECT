@@ -95,7 +95,7 @@ export default function LandingPage() {
   };
   const flavorSize = {
     mallai: {
-      height: isMobile?"121px":"270px",
+      height: isMobile ? "121px" : "270px",
     },
     brownie: {
       height: isMobile ? "100px" : "",
@@ -119,19 +119,8 @@ export default function LandingPage() {
   };
 
   const brushText = {
-    background:
-      "url('/brush-bg.png') no-repeat center/contain" /* Use a white brush stroke image */,
-    // fontFamily: "Permanent Marker, cursive",
     fontSize: isMobile ? "15px" : "40px",
-    color: "vennila",
-    // padding: "20px 40px",
-    // display: "inline-block",
-    backgroundSize: "cover",
-    position: "absolute",
-    bottom: "-10%",
-    // width:"100px",
-    boxSizing: "unset !important",
-    // fontSize: "40px",
+    color: "white",
   };
   return (
     <div>
@@ -151,7 +140,7 @@ export default function LandingPage() {
         />
       )}
 
-     {isMobile&& <FlavourMorque />}
+      {/* {isMobile && <FlavourMorque />} */}
 
       <ProductList />
 

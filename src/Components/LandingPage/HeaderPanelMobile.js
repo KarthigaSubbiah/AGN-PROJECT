@@ -5,6 +5,7 @@ import flavourList from "../../Utility/FlavouList";
 import chocolatefill from "../Svgs/LandingPage/chocolate-fill.png";
 import vennilafill from "../Svgs/LandingPage/venila2.jpg";
 import kulfifill from "../Svgs/LandingPage/mallaikulfi.jpg";
+import thandaifill from "../Svgs/LandingPage/thandai.jpg";
 
 const HeaderPanelMobile = ({ flavourPosition, flavorSize, brushText }) => {
   let carouselContent = [
@@ -23,7 +24,13 @@ const HeaderPanelMobile = ({ flavourPosition, flavorSize, brushText }) => {
     {
       image1: powderImage,
       image2: "",
-      backgroundImage:kulfifill ,
+      backgroundImage: kulfifill,
+      text: "Pure power in every scoop, Recover fast, grow strong.",
+    },
+    {
+      image1: powderImage,
+      image2: "",
+      backgroundImage: thandaifill,
       text: "Pure power in every scoop, Recover fast, grow strong.",
     },
   ];
@@ -90,53 +97,33 @@ const HeaderPanelMobile = ({ flavourPosition, flavorSize, brushText }) => {
                 ></div>
               </div>
 
-              {/* <div
-                  style={{
-                    position: "absolute",
-                    left: "33%",
-                    top: "46%",
-                    zIndex: 0,
-                  }}
-                >
-                  <img
-                    src={powderImage}
-                    style={{ width: "155px", height: "172px" }}
-                  ></img>
-                </div> */}
-
-              {/* Powder */}
-
-              {/* <div
-                  style={{
-                    position: "absolute",
-                    right: "-17%",
-                    bottom: "-1%",
-                    ...flavourPosition[content.flavour],
-                    zIndex: 0,
-                  }}
-                >
-                  <img
-                    src={flavourList[content.flavour].image}
-                    style={{ ...flavorSize[content.flavour], rotate: "-10deg" }}
-                  ></img>
-                </div> */}
-
               <div
                 style={{
                   position: "absolute",
-                  left: "51%",
+                  left: "70%",
                   transform: "translate(-30%,-50%)",
                   top: "26%",
                 }}
               >
-                <div>
+                <div
+                  style={{
+                    backgroundColor: "rgba(0, 0, 0, 0.3)",
+                    paddingLeft: "12px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                    padding:"12px",
+                    width:"80%",
+                    borderRadius:"10px"
+                  }}
+                >
                   <div className="banel-product-name">Whey Protein</div>
                   <div
                     className="whey-protein-text"
-                    style={{ ...brushText, width: "152px" }}
+                    style={{ ...brushText, width: "200px" }}
                   >
                     {" "}
-                  {content.text}
+                    {content.text}
                   </div>
                   <div className="banel-button">
                     <button class="button-33" role="button">
