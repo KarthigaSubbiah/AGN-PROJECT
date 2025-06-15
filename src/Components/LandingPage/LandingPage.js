@@ -9,25 +9,25 @@ import { isMobile, isTablet, isBrowser } from "react-device-detect";
 
 export default function LandingPage() {
   let carouselContent = [
-    // {
-    //   product: "Whey Protein",
-    //   about: "Pure power in every scoop, Recover fast, grow strong.",
-    //   flavour: "brownie",
-    //   color: "  #D7B899",
-    // },
-    // {
-    //   product: "Protein Gainer",
-    //   about:
-    //     "Build strength with every scoop,Fuel your body to go beyond limits.",
-    //   flavour: "mallai",
-    //   color: "rgb(240, 233, 144)",
-    // },
-    // {
-    //   product: "Whey Protein",
-    //   about: "Pure power in every scoop, Recover fast, grow strong.",
-    //   flavour: "redVelvet",
-    //   color: "rgb(236, 177, 189)",
-    // },
+    {
+      product: "Whey Protein",
+      about: "Pure power in every scoop, Recover fast, grow strong.",
+      flavour: "brownie",
+      color: "  #D7B899",
+    },
+    {
+      product: "Protein Gainer",
+      about:
+        "Build strength with every scoop,Fuel your body to go beyond limits.",
+      flavour: "mallai",
+      color: "rgb(240, 233, 144)",
+    },
+    {
+      product: "Whey Protein",
+      about: "Pure power in every scoop, Recover fast, grow strong.",
+      flavour: "redVelvet",
+      color: "rgb(236, 177, 189)",
+    },
     {
       product: "Protein Gainer",
       about:
@@ -35,32 +35,32 @@ export default function LandingPage() {
       flavour: "vennila",
       color: "	#FFF1DA",
     },
-    // {
-    //   product: "Whey Protein",
-    //   about: "Pure power in every scoop, Recover fast, grow strong.",
-    //   flavour: "alphanza",
-    //   color: "	#FFF3E0",
-    // },
-    // {
-    //   product: "Protein Gainer",
-    //   about:
-    //     "Build strength with every scoop,Fuel your body to go beyond limits.",
-    //   flavour: "cookies",
-    //   color: "rgb(209, 161, 141)",
-    // },
-    // {
-    //   product: "Whey Protein",
-    //   about: "Pure power in every scoop, Recover fast, grow strong.",
-    //   flavour: "kheer",
-    //   color: "rgb(240, 233, 144)",
-    // },
-    // {
-    //   product: "Protein Gainer",
-    //   about:
-    //     "Build strength with every scoop,Fuel your body to go beyond limits.",
-    //   flavour: "rose",
-    //   color: "	#FFE4E9",
-    // },
+    {
+      product: "Whey Protein",
+      about: "Pure power in every scoop, Recover fast, grow strong.",
+      flavour: "alphanza",
+      color: "	#FFF3E0",
+    },
+    {
+      product: "Protein Gainer",
+      about:
+        "Build strength with every scoop,Fuel your body to go beyond limits.",
+      flavour: "cookies",
+      color: "rgb(209, 161, 141)",
+    },
+    {
+      product: "Whey Protein",
+      about: "Pure power in every scoop, Recover fast, grow strong.",
+      flavour: "kheer",
+      color: "rgb(240, 233, 144)",
+    },
+    {
+      product: "Protein Gainer",
+      about:
+        "Build strength with every scoop,Fuel your body to go beyond limits.",
+      flavour: "rose",
+      color: "	#FFE4E9",
+    },
   ];
 
   const flavourPosition = {
@@ -121,9 +121,9 @@ export default function LandingPage() {
   const brushText = {
     background:
       "url('/brush-bg.png') no-repeat center/contain" /* Use a white brush stroke image */,
-    fontFamily: "Permanent Marker, cursive",
+    // fontFamily: "Permanent Marker, cursive",
     fontSize: isMobile ? "15px" : "40px",
-    color: "black",
+    color: "vennila",
     // padding: "20px 40px",
     // display: "inline-block",
     backgroundSize: "cover",

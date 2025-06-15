@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import Grid from "@mui/joy/Grid";
 import { styled } from "@mui/joy/styles";
@@ -7,8 +7,12 @@ import FilterBar from "../Filter/FilterBar";
 import { isMobile, isTablet, isBrowser } from "react-device-detect";
 import MobileProductCard from "./MobileProductCard";
 import flavourList from "../../Utility/FlavouList";
+import allProducts from "../../Utility/ProductList";
+import "./Css/ProductList.css";
 
 const ProductList = () => {
+  const [visibleProducts, setVisibleProducts] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(6);
   const Item = styled(Sheet)(({ theme }) => ({
     backgroundColor: "#fff",
     ...theme.typography["body-sm"],
@@ -85,7 +89,13 @@ const ProductList = () => {
   };
 
   const bestSellers = [{}, {}, {}]; // Replace with actual best sellers
-  const allProducts = [{}, {}, {}, {}, {}, {}]; // Replace with actual products
+  // const allProducts = [{}, {}, {}, {}, {}, {}]; // Replace with actual products
+
+  useEffect(() => {
+    let copyProducts = [...allProducts];
+    copyProducts = copyProducts.slice(0, currentIndex);
+    setVisibleProducts([...copyProducts]);
+  }, [currentIndex]);
 
   return (
     <div>
@@ -102,22 +112,22 @@ const ProductList = () => {
       <Grid
         container
         spacing={2}
-        sx={{ padding: 2, height: isMobile ? "auto" : "200vh",padding:"0" }}
+        sx={{ padding: 2, height: isMobile ? "auto" : "auto", padding: "0" }}
         alignItems="flex-start"
       >
         {/* Left Column - Best Sellers */}
         {!isMobile && (
-          <Grid xs={12} md={3} >
-            <Item sx={{paddingTop:"0",paddingLeft:"16px"}}>
+          <Grid xs={12} md={3}>
+            <Item sx={{ paddingTop: "0", paddingLeft: "16px" }}>
               <h3
                 style={{
                   textAlign: "center",
                   fontSize: "20px",
                   marginBottom: "12px",
                   fontWeight: "bold",
-                  background:"liner",
+                  background: "liner",
                   background: "linear-gradient(to right, #061b42, white)",
-                  color:"white"
+                  color: "white",
                 }}
               >
                 Available Flavours
@@ -130,7 +140,13 @@ const ProductList = () => {
                 }}
               >
                 {Object.entries(flavourList).map((product, index) => (
-                  <div style={{display:"flex",alignItems:"center",gap:"5px"}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                    }}
+                  >
                     <div
                       style={{
                         backgroundColor: "lightgray",
@@ -155,14 +171,14 @@ const ProductList = () => {
                         // position: "absolute",
                         // right: "-45%",
                         // top: "40%",
-                        fontWeight:"bold",
+                        fontWeight: "bold",
                         // backgroundColor:"yellow",
-                        height:"38px",
-                        display:"flex",
-                        alignItems:"center",
-                        minWidth:"200px",
-                        padding:"3px",
-                        fontSize:"20px"
+                        height: "38px",
+                        display: "flex",
+                        alignItems: "center",
+                        minWidth: "200px",
+                        padding: "3px",
+                        fontSize: "20px",
                       }}
                     >
                       {product[1].name}
@@ -204,11 +220,37 @@ const ProductList = () => {
             </h3>
             {!isMobile ? (
               <Grid container spacing={2}>
-                {allProducts.map((product, index) => (
+                {visibleProducts.map((product, index) => (
                   <Grid key={index} xs={12} sm={2} md={4}>
                     <ProductCard product={product} />
                   </Grid>
                 ))}
+                <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "20px",
+                  }}
+                >
+                  <button
+                    class="button-86"
+                    role="button"
+                    onClick={() => {
+                      if (currentIndex > allProducts?.length) {
+                        setCurrentIndex(6);
+                      }else{
+                         setCurrentIndex((pre)=>pre+6);
+                      }
+                    }}
+                  >
+                    {console.log(currentIndex, allProducts, "checkingProd")}
+                    {currentIndex > allProducts?.length
+                      ? "Show Less"
+                      : "Load More"}
+                  </button>
+                </div>
               </Grid>
             ) : (
               <div
